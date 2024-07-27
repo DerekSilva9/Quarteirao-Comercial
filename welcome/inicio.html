@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarteirão Comercial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            background-image: url('../assets/background.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav a {
+            margin: 0 10px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: #a2c0e8;
+            margin: 4px 0;
+        }
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #0062ff;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .hero button {
+            background-color: #a2c0e8;
+            border: none;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hero button:hover {
+            background-color: #a2c0e8;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 36px;
+            color: #0062ff;
+            margin-bottom: 20px;
+        }
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .step {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #a2c0e8;
+            border-radius: 10px;
+            background-color: #ffffff;
+            width: 300px;
+        }
+        .step img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .step h3 {
+            font-size: 24px;
+            color: #a2c0e8;
+        }
+        .footer {
+            background-color: #a2c0e8;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #ffffff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                width: 200px;
+            }
+            header nav a {
+                margin: 10px 0;
+                padding: 10px 20px;
+                width: 100%;
+                text-align: left;
+                border-top: 1px solid #a2c0e8;
+            }
+            header nav a:first-child {
+                border-top: none;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Quarteirão Comercial</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">Como Funciona</a>
+            <a href="#">Para Empresas</a>
+            <a href="#">Contato</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Compre e Venda com Facilidade</h1>
+        <p>O marketplace perfeito para comprar e vender produtos. Cadastre sua empresa e alcance mais clientes!</p>
+        <button onclick="window.location.href='login.html' ">Comece Agora</button>
+    </div>
+    <div class="section">
+        <h2>Como Funciona</h2>
+        <div class="steps">
+            <div class="step">
+                <img src="create-account.png" alt="Crie uma Conta">
+                <h3>Crie uma Conta</h3>
+            </div>
+            <div class="step">
+                <img src="explore-products.png" alt="Explore Produtos">
+                <h3>Explore Produtos</h3>
+            </div>
+            <div class="step">
+                <img src="sell-products.png" alt="Venda Seus Produtos">
+                <h3>Venda Seus Produtos</h3>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Quarteirão Comercial. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById('nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        }
+
+        function adjustMenu() {
+            var navMenu = document.getElementById('nav-menu');
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        }
+
+        window.addEventListener('resize', adjustMenu);
+        window.addEventListener('load', adjustMenu);
+    </script>
+</body>
+</html>
