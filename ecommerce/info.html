@@ -48,10 +48,80 @@
                 </div>
 
                 <button class="comprar">Começar Compras</button>
+            </div>
+        </section>
 
-
+        <h1 class="title-carrossel">Promoções de hoje</h1>
+        <section class="promoções-carrossel">
+            <div class="carousel">
+                <button class="carousel-button prev">‹</button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="product">
+                                <img src="/assets/ype.jpg" alt="Produto 1">
+                                <p>Produto 1 - R$ 9,99</p>
+                            </div>
+                            <div class="product">
+                                <img src="/assets/heineken.jpg" alt="Produto 2">
+                                <p>Produto 2 - R$ 19,99</p>
+                            </div>
+                            <div class="product">
+                                <img src="/assets/downy.jpg" alt="Produto 3">
+                                <p>Produto 3 - R$ 29,99</p>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="product">
+                                <img src="/assets/heineken.jpg" alt="Produto 4">
+                                <p>Produto 4 - R$ 39,99</p>
+                            </div>
+                            <div class="product">
+                                <img src="/assets/downy.jpg" alt="Produto 5">
+                                <p>Produto 5 - R$ 30,99</p>
+                            </div>
+                            <div class="product">
+                                <img src="/assets/ype.jpg" alt="Produto 6">
+                                <p>Produto 6 - R$ 8,99</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button next">›</button>
             </div>
         </section>
     </main>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-button.next');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const slideWidth = slides[0].getBoundingClientRect().width;
+    
+        const setSlidePosition = (slide, index) => {
+            slide.style.left = slideWidth * index + 'px';
+        };
+        slides.forEach(setSlidePosition);
+    
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+            currentSlide.classList.remove('current-slide');
+            targetSlide.classList.add('current-slide');
+        };
+    
+        nextButton.addEventListener('click', e => {
+            const currentSlide = track.querySelector('.current-slide') || slides[0];
+            const nextSlide = currentSlide.nextElementSibling || slides[0];
+            moveToSlide(track, currentSlide, nextSlide);
+        });
+    
+        prevButton.addEventListener('click', e => {
+            const currentSlide = track.querySelector('.current-slide') || slides[0];
+            const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+            moveToSlide(track, currentSlide, prevSlide);
+        });
+    </script>
+    
 </body>
 </html>

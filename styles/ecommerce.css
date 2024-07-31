@@ -20,9 +20,17 @@ header input{
     border-color: gray;
     
 }
+.seta_voltar img{
+    width: 40px;
+}
 ul{
     display: flex;
     list-style: none;
+}
+ul img{
+    width: 30px;
+    background-color: rgb(218, 218, 218);
+    border-radius: 40px;
 }
 .estabelecimentos{
     background-color: #eff5ff;
@@ -106,5 +114,91 @@ ul{
     border-radius: 15px;
     background-color: white;
     margin-top: 30px;
+    border-style: none;
+}
+.promoções-carrossel {
+    width: 80%;
+    margin: 0 auto;
+}
+.title-carrossel{
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.product {
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+.cad_empresa{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+.logo_empresa{
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    margin: auto;
+}
+.form_logo{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.form-group input{
+    margin-bottom: 10px;
+    height: 33px;
+    width: 300px;
+    border-radius: 20px;
     border-style: none;
 }
