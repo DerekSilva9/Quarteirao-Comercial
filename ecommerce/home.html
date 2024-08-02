@@ -8,9 +8,14 @@
 </head>
 <body>
     <header>
-        <input type="search" name="search" id="search" placeholder="Pesquise">
-        <h2>Estabelecimentos</h2>
-        <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <input type="search" class="search" name="search" id="search" placeholder="Pesquise">
+        <h2 class="title_home">Estabelecimentos</h2>
+        <nav id="nav-menu">
             <ul>
                 <li><a href="#"><img src="/assets/carrinho_de_supermercado-removebg-preview.png" alt="Carrinho"></a></li>
                 <li><a href="log.html"><img src="/assets/pngegg.png" alt="Conta"></a></li>
@@ -18,6 +23,14 @@
             </ul>
         </nav>
     </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="closebtn" onclick="closeNav()">&times;</button>
+        <a href="#">Home</a>
+        <a href="#">Estabelecimentos</a>
+        <a href="#">Conta</a>
+        <a href="#">Configurações</a>
+    </div>
 
     <main>
         <section class="area-estabelecimentos">
@@ -51,17 +64,10 @@
                 <div class="estabelecimentos">
                     <img src="" alt="">
                 </div>
-                <div class="estabelecimentos">
-                    <img src="" alt="">
-                </div>
-                <div class="estabelecimentos">
-                    <img src="" alt="">
-                </div>
-                <div class="estabelecimentos">
-                    <img src="" alt="">
-                </div>
+                
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

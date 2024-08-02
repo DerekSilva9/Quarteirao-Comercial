@@ -5,35 +5,113 @@ body {
     margin: 0;
     background-image: url('../assets/background.jpeg');
     background-size: cover;
+    
 }
-header{
+
+header {
     background-color: #6dabfd;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
+    position: relative;
 }
-header input{
+
+header input {
     height: 30px;
     border-radius: 30px;
     border-style: solid;
     border-color: gray;
+}
+.seta_voltar {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seta_voltar img {
+    width: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: 40px;
+}
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute; /* Adicionado para posicionar o botão no header */
+    right: 15px; /* Ajustado para posicionar o botão no lado direito */
+    top: 50%; /* Centraliza verticalmente no header */
+    transform: translateY(-50%); /* Ajuste fino para o centro vertical */
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    
+    .menu-toggle {
+        display: flex;
+    }
+    .title_home{
+        display: none;
+    }
+
+    #nav-menu {
+        display: none;
+    }
+    .container {
+        margin: 0 auto; /* Remove margens laterais e centraliza */
+        padding: 10px;  /* Ajusta o padding conforme necessário */
+        max-width: 100%; /* Garante que a largura máxima não ultrapasse a tela */
+    }
+    .estabelecimentos {
+        width: 80px; /* Ajuste o tamanho dos itens, se necessário */
+        height: 80px; /* Ajuste o tamanho dos itens, se necessário */
+    }
+    .search{
+        width: 130px;
+    }
+    .container-info {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .left-logo img, .right-info {
+        width: 100%;
+        text-align: center;
+    }
+    .comprar {
+        width: 80%;
+        margin: auto;
+    }
+
+    .info-local {
+        padding: 10px;
+    }
     
 }
-.seta_voltar img{
-    width: 40px;
-}
-ul{
+
+ul {
     display: flex;
     list-style: none;
-    gap: 10px   ;
+    gap: 10px;
 }
-ul img{
+
+ul img {
     width: 30px;
     background-color: rgb(218, 218, 218);
     border-radius: 40px;
 }
-.estabelecimentos{
+
+.estabelecimentos {
     background-color: #eff5ff;
     padding: 20px;
     text-align: center;
@@ -43,34 +121,38 @@ ul img{
     margin: auto;
     display: flex;
     cursor: pointer;
+    overflow: hidden;
     
 }
-.container{
-    margin: 90px;
-    margin-top: 50px;
+
+.estabelecimentos img {
+    border-radius: 10px;
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço disponível */
+}
+
+.container {
+
+    margin: auto;
+    margin-top:60px ;
     background-color: #95c0f8;
-    grid-gap: 10px;
     padding: 20px;
     border-radius: 15px;
     display: grid;
-    grid-template-columns: 
-        repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 500px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 500px; /* Ajustado para maior largura */
     gap: 25px;
     flex-wrap: wrap;
-    
 }
-.estabelecimentos img{
-    border-radius: 10px;
-}
-.container-info{
+
+.container-info {
     display: flex;
     align-items: center;
     padding: 60px;
     gap: 30px;
     flex-wrap: wrap;
 }
-.title-local{
+
+.title-local {
     background-color: white;
     height: 35px;
     width: 280px;
@@ -78,38 +160,42 @@ ul img{
     border-radius: 10px;
     text-align: center;
 }
-.info-local{
+
+.info-local {
     margin: auto;
     align-items: center;
     flex-wrap: wrap;
-
 }
-.left-logo img{
+
+.left-logo img {
     height: 150px;
-    align-items: center;
     border-radius: 20px;
 }
-.middle{
+
+.middle {
     display: flex;
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
 }
-.local-contatos{
+
+.local-contatos {
     background-color: rgb(255, 255, 255);
     max-height: 1300px;
     padding: 10px;
     border-radius: 20px;
     flex-wrap: wrap;
 }
-.about{
+
+.about {
     width: 350px;
     padding: 10px;
     border-radius: 20px;
     background-color: white;
     flex-wrap: wrap;
 }
-.comprar{
+
+.comprar {
     height: 40px;
     width: 300px;
     border-radius: 15px;
@@ -117,11 +203,13 @@ ul img{
     margin-top: 30px;
     border-style: none;
 }
+
 .promoções-carrossel {
     width: 80%;
     margin: 0 auto;
 }
-.title-carrossel{
+
+.title-carrossel {
     text-align: center;
 }
 
@@ -155,10 +243,13 @@ ul img{
 }
 
 .product img {
-    width: 30%;
-    height: auto;
+    width: 30%; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
     border-radius: 10px;
 }
+
+
+
 
 .carousel-button {
     position: absolute;
@@ -179,30 +270,71 @@ ul img{
 .next {
     right: 0;
 }
-.cad_empresa{
+
+.cad_empresa {
     display: flex;
     justify-content: center;
     gap: 60px;
 }
-.logo_empresa{
+
+.logo_empresa {
     background-color: white;
     width: 80px;
     height: 80px;
     border-radius: 15px;
     margin: auto;
 }
-.form_logo{
+
+.form_logo {
     text-align: center;
     justify-content: center;
     align-items: center;
 }
-.form-group input{
+
+.form-group input {
     margin-bottom: 10px;
     height: 33px;
     width: 300px;
     border-radius: 20px;
     border-style: none;
 }
-button{
+
+button {
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 200px; /* Ajustado para largura menor */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #6dacff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
     cursor: pointer;
 }

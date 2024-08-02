@@ -8,12 +8,19 @@
 </head>
 <body>
     <header>
-        <a href="javascript:history.back()">
-            <div class="seta_voltar"><img src="/assets/seta_para_sair-removebg-preview.png" alt="Sair"></div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+            <div class="seta_voltar"><a href="javascript:history.back()"><img src="/assets/seta_para_sair-removebg-preview.png" alt="Sair"></a></div>
         </a>
-        <input type="search" name="search" id="search" placeholder="Pesquise">
-        <h2>Informações</h2>
-        <nav>
+
+
+        <h2 class="title_home">Informações</h2>
+
+        <nav id="nav-menu">
             <ul>
                 <li><a href="#"><img src="/assets/carrinho_de_supermercado-removebg-preview.png" alt="Carrinho"></a></li>
                 <li><a href="log.html"><img src="/assets/pngegg.png" alt="Conta"></a></li>
@@ -21,6 +28,14 @@
             </ul>
         </nav>
     </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="closebtn" onclick="closeNav()">&times;</button>
+        <a href="#">Home</a>
+        <a href="#">Estabelecimentos</a>
+        <a href="#">Conta</a>
+        <a href="#">Configurações</a>
+    </div>
 
     <main class="info-local">
         <section class="container-info">
@@ -95,36 +110,7 @@
         </section>
     </main>
 
-    <script>
-        const track = document.querySelector('.carousel-track');
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.carousel-button.next');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const slideWidth = slides[0].getBoundingClientRect().width;
-    
-        const setSlidePosition = (slide, index) => {
-            slide.style.left = slideWidth * index + 'px';
-        };
-        slides.forEach(setSlidePosition);
-    
-        const moveToSlide = (track, currentSlide, targetSlide) => {
-            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-            currentSlide.classList.remove('current-slide');
-            targetSlide.classList.add('current-slide');
-        };
-    
-        nextButton.addEventListener('click', e => {
-            const currentSlide = track.querySelector('.current-slide') || slides[0];
-            const nextSlide = currentSlide.nextElementSibling || slides[0];
-            moveToSlide(track, currentSlide, nextSlide);
-        });
-    
-        prevButton.addEventListener('click', e => {
-            const currentSlide = track.querySelector('.current-slide') || slides[0];
-            const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
-            moveToSlide(track, currentSlide, prevSlide);
-        });
-    </script>
+    <script src="script.js"></script>
     
 </body>
 </html>
