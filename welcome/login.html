@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>LOGIN</h1>
-        <form id="loginForm">
+        <form id="loginForm" onsubmit="validateLogin(event)">
             <div class="form-group">
                 <i class="fa fa-envelope"></i>
                 <input type="email" id="email" class="input-field" placeholder="Email" required>
@@ -23,7 +23,7 @@
                 <a href="create.html" class="link">Criar Conta</a>
             </div>
 
-            <button onclick="window.location.href='/ecommerce/home.html'" type="submit" class="btn">Entrar</button>
+            <button type="submit" class="btn">Entrar</button>
         </form>
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
