@@ -1,0 +1,143 @@
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(background.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Fundo da página */
+.fundo {
+    background-color: #116AE1;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+/* Imagem da seta */
+.seta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.seta-img {
+    width: 40px;
+    height: auto;
+}
+
+/* Imagem das configurações */
+.conf {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.conf-img {
+    width: 40px;
+    height: auto;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Área central */
+.central {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 150px;
+}
+
+/* Botões à esquerda */
+.buttons-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Informações da empresa */
+.company-info {
+    text-align: center;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid black;
+    margin: 0 auto 10px auto;
+}
+
+.company-info h1 {
+    margin: 0;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Botões à direita */
+.buttons-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Produtos mais vendidos */
+.produtos {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    background-color: #116AE1;
+    padding: 20px 0;
+}
+
+.produtos h2 {
+    margin: 0 0 20px 0;
+    color: white;
+}
+
+.produtos-lista {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.produto-item {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+}
+
+/* Área de fundo inferior */
+.baix {
+    background-color: #116AE1;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+}
